@@ -1,15 +1,47 @@
 <html>
-  <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="first-number">First Number:</label>
-      <input type="number" id="first-number" />
-      <label for="second-number">Second Number:</label>
-      <input type="number" id="second-number" />
-      <input type="submit" value="Sumar" />
-    </form>
-    <div id="resultado-div"></div>
 
-    <script type="module" src="./src/index.js"></script>
-  </body>
+<head>
+  <title>Título</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header><h1><p style="text-align:center">Bienvenido al autito</p></h1></header>
+  <center><h3 id="HoraActual"></h3>
+  <script type="text/javascript">
+    showTime();
+    function showTime() {
+      myDate = new Date();
+      hours = myDate.getHours();
+      minutes = myDate.getMinutes();
+      seconds = myDate.getSeconds();
+      if (hours < 10) hours = 0 + hours;
+
+      if (minutes < 10) minutes = "0" + minutes;
+
+      if (seconds < 10) seconds = "0" + seconds;
+
+      $("#HoraActual").text("Hora actual "+hours + ":" + minutes);
+      setTimeout("showTime()", 1000);
+    }
+  </script>
+
+  <div id="Comandos:">
+    <h2>AUTITO</h2>
+    <form id="autito-form">
+      <label for="comandos-input">Introduce tus comandos aca:</label><br />
+      <input type="string" id="comandos-input" /><br />
+      <br>
+      <input type="submit" value="Ejecutar" />
+      
+    </form>
+    <h3>Posicion inicial: <p id="total"> </p></h3>
+    <h3>Comandos: <p id="descuento"></p></h3>
+    <h3>Posicion final: <p id="totalConImpuesto"> </p></h3>
+  </div>
+</center>
+  <script src="/src/index.js"></script>
+</body>
+
 </html>

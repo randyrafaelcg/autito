@@ -1,5 +1,7 @@
-function sumar(a, b) {
-  return a + b;
+function PosFinal(comandos) {
+  let posF="0,0N"
+  if(comandos=="")
+    return posF;
 }
 
-export default sumar;
+export default PosFinal;

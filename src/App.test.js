@@ -1,7 +1,8 @@
-import sumar from "./App.js";
+import PosFinal from "./App.js";
 
-describe("Sumar", () => {
-  it("deberia sumar dos numeros", () => {
-    expect(sumar(3, 2)).toEqual(5);
+describe("PosFinal", () => {
+  it("deberia retornar posicion 0,0N por defecto", () => {
+    expect(PosFinal("")).toEqual("0,0N");
   });
+  
 });
