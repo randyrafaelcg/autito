@@ -1,15 +1,14 @@
-import sumar from "./App";
+import {PosFinal,PosINI,Instrucciones,Vistafunc} from "./App";
 
-const first = document.querySelector("#first-number");
-const second = document.querySelector("#second-number");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const comandosdoc = document.querySelector("#comandos-input");
+const formT = document.querySelector("#autito-form");
 
-form.addEventListener("submit", (event) => {
+formT.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  let PosiFinal=PosFinal(comandosdoc.value);
+  let PosiIni=PosINI(comandosdoc.value);
+  //alert(comandosdoc.value +"   "+PosiFinal);
+  document.getElementById('Posinicial').innerHTML = PosiIni+Vistafunc(comandosdoc.value);
+  document.getElementById('ComandosExt').innerHTML = Instrucciones(comandosdoc.value);
+  document.getElementById('Posicionfinal').innerHTML = PosiFinal;
 });

@@ -1,3 +1,5 @@
+/**/
+
 function PosFinal(comandos) {
   let posXYini=[0,0];
   let posXY=[0,0];
@@ -9,9 +11,9 @@ function PosFinal(comandos) {
   {
     const Seperado=comandos.split("/");
     grilla=Seperado[0].split(",").map(Number);
-    Vista=Seperado[1].replace(/[^EONS]+/, "");
-    instruccion=Seperado[2].split("");
-    posXYini=Seperado[1].split(/[\D]+/)
+    Vista=Vistafunc(comandos);
+    instruccion=Instrucciones(comandos);
+    posXYini=PosINI(comandos);
     posXY=posXYini;
     instruccion.forEach(element => {
       if(element=="I" || element=="D" || element=="0")
@@ -31,6 +33,23 @@ function PosFinal(comandos) {
   return posF.join();
 }
 
+function PosINI(comandos)
+{
+  const Seperado=comandos.split("/");
+  return Seperado[1].split(/[\D]+/)
+}
+
+function Instrucciones(comandos)
+{
+  const Seperado=comandos.split("/");
+  return Seperado[2].split("");
+}
+
+function Vistafunc(comandos)
+{
+  const Seperado=comandos.split("/");
+  return Seperado[1].replace(/[^EONS]+/, "");
+}
 function Rotar(vista,comando)
 {
   if(comando == "I")
@@ -83,4 +102,4 @@ function mover(vista, posXY,grilla)
 }
 
 
-export default PosFinal;
+export {PosFinal,PosINI,Instrucciones,Vistafunc};
