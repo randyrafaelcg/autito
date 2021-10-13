@@ -77,7 +77,10 @@ function mover(vista, posXY,grilla)
     posXY[0]=grilla[0];
     else if(posXY[0]<0)
     posXY[0]=0;
-    
+
   return posXY;
+
 }
+
+
 export default PosFinal;

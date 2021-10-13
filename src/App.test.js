@@ -66,3 +66,14 @@ describe("Pruebas avanzando el autito", () => {
   });
 });
 
+describe("Posicion final del autito combinando comandos", () => {
+  it("deberia retornar posicion avanzando el autito mas alla del tope de la grilla", () => {
+    expect(PosFinal("5,5/0,0N/ADAA")).toEqual("2,1,E");
+  });
+  it("deberia retornar posicion avanzando el autito mas alla del tope de la grilla", () => {
+    expect(PosFinal("5,5/3,3E/AADAADADDA")).toEqual("5,1,E");
+  });
+  it("deberia retornar posicion avanzando el autito mas alla del tope de la grilla", () => {
+    expect(PosFinal("5,5/1,2N/IAIAIAIAA")).toEqual("1,3,N");
+  });
+});
