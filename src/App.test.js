@@ -27,17 +27,42 @@ describe("Posicion final del autito con comandos para rotaciones", () => {
   });
   it("deberia retornar posicion rotada izquierda derecha", () => {
     expect(PosFinal("5,5/0,0N/ID")).toEqual("0,0,N");
-  })
+  });
   it("deberia retornar posicion rotada segun mas comandos de rotacion", () => {
     expect(PosFinal("5,5/0,0N/IDD")).toEqual("0,0,E");
-  })
+  });
   it("deberia retornar posicion rotada segun mas comandos de rotacion", () => {
     expect(PosFinal("5,5/0,0E/IDD")).toEqual("0,0,S");
-  })
+  });
   it("deberia retornar posicion rotada segun mas comandos de rotacion", () => {
     expect(PosFinal("5,5/0,0O/IDDD")).toEqual("0,0,E");
-  })
+  });
   it("deberia retornar posicion rotada segun mas comandos de rotacion", () => {
     expect(PosFinal("5,5/0,0E/IIIII")).toEqual("0,0,N");
-  })
+  });
 });
+
+describe("Pruebas avanzando el autito", () => {
+  it("deberia retornar posicion avanzando el autito una vez", () => {
+    expect(PosFinal("5,5/0,0N/A")).toEqual("0,1,N");
+  });
+  it("deberia retornar posicion avanzando el autito dos veces", () => {
+    expect(PosFinal("5,5/0,0N/AA")).toEqual("0,2,N");
+  });
+  it("deberia retornar posicion avanzando el autito dos veces desde una pos distinta a 0,0", () => {
+    expect(PosFinal("5,5/0,1N/AA")).toEqual("0,3,N");
+  });
+  it("deberia retornar posicion avanzando el autito mas alla del tope de la grilla", () => {
+    expect(PosFinal("5,5/0,2N/AAAA")).toEqual("0,5,N");
+  });
+  it("deberia retornar posicion avanzando el autito una vez en direccion este (X)", () => {
+    expect(PosFinal("5,5/0,0E/A")).toEqual("1,0,E");
+  });
+  it("deberia retornar posicion avanzando el autito mas alla del tope de la grilla", () => {
+    expect(PosFinal("5,5/3,0E/AAA")).toEqual("5,0,E");
+  });
+  it("deberia retornar posicion avanzando el autito mas alla del tope de la grilla", () => {
+    expect(PosFinal("5,5/3,0O/AAA")).toEqual("0,0,O");
+  });
+});
+
