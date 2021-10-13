@@ -9,8 +9,10 @@ function PosFinal(comandos) {
     const Seperado=comandos.split("/");
     grilla=Seperado[0].split(",").map(Number);
     Vista=Seperado[1].replace(/[^EONS]+/, "");
-    instruccion=Seperado[2];
-    Vista = Rotar(Vista,instruccion);
+    instruccion=Seperado[2].split("");
+    instruccion.forEach(element => {
+      Vista = RotarMover(Vista,element);
+    });
     posXY=Seperado[1].split(/[\D]+/)
     posF[0]=posXY[0].toString();
     posF[1]=posXY[1].toString();
@@ -22,12 +24,29 @@ function PosFinal(comandos) {
   return posF.join();
 }
 
-function Rotar(vista,comando)
+function RotarMover(vista,comando)
 {
   if(comando == "I")
   {
     if(vista=="N")
       return "O";
+      else if(vista=="O")
+        return "S";
+      else if(vista=="S")
+        return "E";
+      else if(vista=="E")
+        return "N";
+  }
+  else if(comando=="D")
+  {
+    if(vista=="N")
+      return "E";
+      else if(vista=="E")
+        return "S";
+      else if(vista=="S")
+        return "O";
+      else if(vista=="O")
+        return "N";
   }
   else return vista;
 }

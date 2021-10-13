@@ -22,4 +22,10 @@ describe("Posicion final del autito con comandos para rotaciones", () => {
   it("deberia retornar posicion rotada", () => {
     expect(PosFinal("5,5/0,0N/I")).toEqual("0,0,O");
   });
+  it("deberia retornar posicion rotada 2 veces izquierda", () => {
+    expect(PosFinal("5,5/0,0N/II")).toEqual("0,0,S");
+  });
+  it("deberia retornar posicion rotada izquierda derecha", () => {
+    expect(PosFinal("5,5/0,0N/ID")).toEqual("0,0,N");
+  })
 });
