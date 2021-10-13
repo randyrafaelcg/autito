@@ -1,0 +1,51 @@
+HISTORIAS DE USUARIO
+
+1. Crear un textbox para introducir informacion
+
+como usuario
+quiero un espacio para comandos 
+para escribir las instrucciones del autito
+
+- Se debe mostrar el textbox para ingresar los comandos introducidos por el usuario
+- Se debe tener un boton con el cual el usuario pueda interactuar luego de ingresar los comandos
+
+2. Mostrar datos de posicion inicial, comandos introducidos
+
+Como usuario 
+quiero visualizar los datos que introduci luego de presionar el boton
+para verificar que est correcto
+
+-Se debe mostrar luego de precionar el boton los datos introducidos por el usuario
+
+3. Crear una grilla para delimitar los movimientos del auto
+
+Como usuario 
+quiero mover el autito dentro de un espacio
+para delimitar los movimientos maximos de este
+
+- Se debe controlar que ningun parametro al ser mostrado por pantalla supere los limites establecidos
+
+4. Dar funionalidad para rotar el autito
+
+Como usuario
+quiero poder rotar el auto a izquierda o derecha
+para cambiar la direccion del movimiento
+
+- En los comandos se de ir cambiando la direccion a la que mira el auto, de Este, oeste norte o sur, segun el dato ingresado
+
+5. Dar funcionalidad para avanzar el autito
+
+como usuario
+quiero avanzar el autito
+para desplazarme en la grilla
+
+- Al desplegar la posicion final se debe modificar los datos iniciales segun los comandos que fueron introducidos.
+
+
+6. Crear un espacio donde se muestre la posicion final del autito
+
+como usuario
+quiero ver la posicion final del autito
+para conocer sus coordenadas despues de introducir los comandos
+
+- Desplegar los datos calculados segun los comandos introducidos
