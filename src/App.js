@@ -18,9 +18,13 @@ function PosFinal(comandos) {
     instruccion.forEach(element => {
       if(element=="I" || element=="D" || element=="0")
         Vista = Rotar(Vista,element);
-        else
+        else if(element == "A")
         {
           posXY=mover(Vista,posXY,grilla);
+        }
+        else
+        {
+          posXY=Saltar(Vista,posXY,grilla);
         }
     });
     posF[0]=posXY[0].toString();
@@ -98,7 +102,16 @@ function mover(vista, posXY,grilla)
     posXY[0]=0;
 
   return posXY;
+}
 
+function Saltar(vista, posXY ,grilla)
+{
+  if(vista=="N")
+  {
+    posXY[1]++;
+    posXY[1]++;
+  }
+  return posXY;
 }
 
 

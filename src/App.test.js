@@ -1,4 +1,4 @@
-import PosFinal from "./App.js";
+import {PosFinal,PosINI,Instrucciones,Vistafunc} from "./App.js";
 
 describe("Posicion final del autito sin comandos para avanzar", () => {
   it("deberia retornar posicion 0,0,N por defecto", () => {
@@ -75,5 +75,11 @@ describe("Posicion final del autito combinando comandos", () => {
   });
   it("deberia retornar posicion avanzando el autito mas alla del tope de la grilla", () => {
     expect(PosFinal("5,5/1,2N/IAIAIAIAA")).toEqual("1,3,N");
+  });
+});
+
+describe("Posicion final del autito Comando saltar", () => {
+  it("deberia retornar posicion avanzando el autito dos veces con el comando saltar", () => {
+    expect(PosFinal("5,5/0,0N/S")).toEqual("0,2,N");
   });
 });
