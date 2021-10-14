@@ -111,6 +111,11 @@ function Saltar(vista, posXY ,grilla)
     posXY[1]++;
     posXY[1]++;
   }
+  else if(vista=="S")
+  {
+    posXY[1]--;
+    posXY[1]--;
+  }
   return posXY;
 }
 
