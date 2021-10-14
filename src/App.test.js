@@ -88,4 +88,13 @@ describe("Posicion final del autito Comando saltar", () => {
   it("deberia retornar posicion avanzando el autito con mas comandos saltar con diferentes vistas", () => {
     expect(PosFinal("5,5/0,5S/SS")).toEqual("0,1,S");
   });
+  it("deberia retornar posicion avanzando el autito con mas comandos saltar con diferentes vistas", () => {
+    expect(PosFinal("5,5/0,0E/SS")).toEqual("4,0,E");
+  });
+  it("deberia retornar posicion avanzando el autito con mas comandos saltar con diferentes vistas sin salir de la grilla", () => {
+    expect(PosFinal("5,5/0,0E/SSS")).toEqual("5,0,E");
+  });
+  it("deberia retornar posicion avanzando el autito con mas comandos saltar con diferentes vistas sin salir de la grilla", () => {
+    expect(PosFinal("5,5/0,0E/SSS")).toEqual("5,0,E");
+  });
 });
